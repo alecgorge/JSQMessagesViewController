@@ -85,9 +85,16 @@
 /**
  *  @return The body text of the message.
  *
- *  @warning You must not return `nil` from this method.
+ *  @warning If you return a nil value from the `attributedText` method you must not return `nil` from this method.
  */
 - (NSString *)text;
+
+/**
+ *  @return The body text of the message.
+ *
+ *  @warning If you return a nil value from the `text` method you must not return `nil` from this method.
+ */
+- (NSAttributedString *)attributedText;
 
 /**
  *  @return The media item of the message.

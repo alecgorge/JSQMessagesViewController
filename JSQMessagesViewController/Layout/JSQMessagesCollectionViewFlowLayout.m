@@ -486,7 +486,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     
     CGFloat finalHeight = messageBubbleSize.height;
     finalHeight += attributes.cellTopLabelHeight;
-    finalHeight += attributes.messageBubbleTopLabelHeight;
+//    finalHeight += attributes.messageBubbleTopLabelHeight;
     finalHeight += attributes.cellBottomLabelHeight;
     
     return CGSizeMake(self.itemWidth, ceilf(finalHeight));

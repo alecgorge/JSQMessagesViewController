@@ -303,7 +303,7 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 #pragma mark - Messages view controller
 
 - (void)didPressSendButton:(UIButton *)button
-           withMessageText:(NSString *)text
+           withMessageText:(NSAttributedString *)text
                   senderId:(NSString *)senderId
          senderDisplayName:(NSString *)senderDisplayName
                       date:(NSDate *)date
@@ -667,12 +667,16 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     }
 }
 
-- (NSString *)jsq_currentlyComposedMessageText
+- (NSAttributedString *)jsq_currentlyComposedMessageText
 {
+    NSAttributedString *space = [NSAttributedString.alloc initWithString:@" "
+                                                              attributes:self.inputToolbar.contentView.textView.typingAttributes];
+    
     //  add a space to accept any auto-correct suggestions
-    NSString *text = self.inputToolbar.contentView.textView.text;
-    self.inputToolbar.contentView.textView.text = [text stringByAppendingString:@" "];
-    return [self.inputToolbar.contentView.textView.text jsq_stringByTrimingWhitespace];
+    NSMutableAttributedString *text = self.inputToolbar.contentView.textView.attributedText.mutableCopy;
+    [text appendAttributedString:space];
+    self.inputToolbar.contentView.textView.attributedText = text;
+    return [self.inputToolbar.contentView.textView.attributedText jsq_attributedStringByTrimingWhitespace];
 }
 
 #pragma mark - Text view delegate

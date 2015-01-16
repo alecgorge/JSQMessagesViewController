@@ -51,13 +51,13 @@
     [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming cellReuseIdentifier]];
     
-    [self registerNib:[JSQMessagesCollectionViewCellOutgoing nib]
+    [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing cellReuseIdentifier]];
     
     [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier]];
     
-    [self registerNib:[JSQMessagesCollectionViewCellOutgoing nib]
+    [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing mediaCellReuseIdentifier]];
     
     [self registerNib:[JSQMessagesTypingIndicatorFooterView nib]

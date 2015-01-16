@@ -18,6 +18,20 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSAttributedString (JSQMessages)
+
+/**
+ *  @return A copy of the receiver with all leading and trailing whitespace removed.
+ */
+- (NSAttributedString *)jsq_attributedStringByTrimingWhitespace;
+
+/**
+ *  @return A copy of the receiver with all leading and trailing characters in the set removed.
+ */
+- (NSAttributedString *)jsq_attributedStringByTrimmingCharactersInSet:(NSCharacterSet *)set;
+
+@end
+
 @interface NSString (JSQMessages)
 
 /**
